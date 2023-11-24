@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@300&family=Manrope&family=Quicksand:wght@500&family=Titillium+Web&display=swap');*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Asap', sans-serif;
+}
+
+.container{
+  /* border:2px solid yellow; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 100vh;
+}
+
+
+.card{
+  /* border:2px solid red; */
+  height: 430px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 0.5px solid #585757;
+  /* border-right: 0.5px solid #585757; */
+  border-radius: 10%;
+  cursor: pointer ;
+  transition: .3s;
+  margin-top: 40px;
+}
+
+.card:hover{
+  transform: scale(1.1);
+  border-radius: 60px;
+  border-color: black;
+  color:transparent;
+
+}
+
+.card img{
+  height: 70%;
+  width: 80%;
+  border-radius: 30px;
+  transition: .2s;
+}
+
+.button{
+  margin-top: 15px;
+  border-radius:20px;
+  width:100px;
+  height:40px;
+  font-family: sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: .1s;
+}
+
+.button:hover{
+  color:white;
+  background-color: black;
+}
+
+.button:active{
+  background-color: white;
+  color: black;
+}
+
+

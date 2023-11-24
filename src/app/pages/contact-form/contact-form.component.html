@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Rellena el formulario y te responderemos lo antes posible</h1>
+  <div class="formulario">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" formControlName="name" required>
+
+      <label for="surname">Apellidos</label>
+      <input type="text" id="surname" formControlName="surname" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" required>
+
+      <label for="text">Tu mensaje</label>
+      <textarea name="message" id="message" formControlName="message" cols="30" rows="10" placeholder="Escribe tu mensaje" required></textarea>
+
+      <button class="boton" [disabled]="contactForm.invalid">Enviar</button>
+    </form>
+  </div>
+</div>

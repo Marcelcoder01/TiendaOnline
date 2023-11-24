@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@300&family=Manrope&family=Quicksand:wght@500&family=Titillium+Web&display=swap');*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Asap', sans-serif;
+}
+
+
+
+.container{
+    /* background-color: black; */
+    background-image:url('../../../assets/img/fondo.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.text-top{
+  /* border-left:.5px solid #585757;
+  border-right:.5px solid #585757; */
+
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}

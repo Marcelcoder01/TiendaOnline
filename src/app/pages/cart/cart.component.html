@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="product">
+    <!-- se usa el método async pipes para suscribirse a los cambios de los observables
+    cuando cambian, en este caso es cuando se añaden al carrito y se modifica la lista
+    de productos en la lista, en este caso se llama myCart$ -->
+    <div class="box_product" *ngFor="let item of ItemsCart">
+      <div> {{ item.name }}</div>
+      <br>
+      <div> {{ item.price }}</div>
+      <div class="cantidad"> x1</div>
+      <button class="boton" (click)="deleteItem(item.id)"><i class="fa-solid fa-trash"></i></button>
+    </div>
+  </div>
+  <div class="total">
+    <p> Total: {{ total() }}€</p>
+  </div>
+</div>
