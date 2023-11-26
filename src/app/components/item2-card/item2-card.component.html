@@ -4,8 +4,10 @@
 <div class="container">
     <div class="card" *ngFor="let item of items">
       <div> {{ item.id }}</div>
-      <div> {{ item.name }}</div>
-      <img [src]="'assets/' + item.photo" alt=""/>
+      <br>
+      <div> {{ item.title }}</div>
+      <br>
+      <img [src]="item.image" alt=""/>
       <br>
       <div> {{ item.price }}</div>
       <button class="button" (click)="addToCart(item)"><i class="fa-solid fa-basket-shopping"></i></button>

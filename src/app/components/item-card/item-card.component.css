@@ -16,17 +16,20 @@
 
 .card{
   /* border:2px solid red; */
-  height: 430px;
-  width: 280px;
+  height: 550px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 0.5px solid #585757;
+  /* border-bottom: 0.5px solid #585757; */
   /* border-right: 0.5px solid #585757; */
   border-radius: 10%;
   cursor: pointer ;
   transition: .3s;
   margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+
 }
 
 .card:hover{
@@ -38,7 +41,7 @@
 }
 
 .card img{
-  height: 70%;
+  height: 60%;
   width: 80%;
   border-radius: 30px;
   transition: .2s;

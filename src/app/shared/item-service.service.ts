@@ -9,8 +9,8 @@ import { Item } from '../models/item.model';
 })
 export class ItemServiceService {
 
-  private apiURL = "http://localhost:3000/items"
-  private apiURL2 = "http://localhost:3000/items2"
+  private apiURL = "https://fakestoreapi.com/products/category/men's%20clothing"
+  private apiURL2 = "https://fakestoreapi.com/products/category/women's%20clothing"
 
 
   //Lista carrito
