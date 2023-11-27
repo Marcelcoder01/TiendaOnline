@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  imagen: string[] = [
+    "../../../assets/img/fondo2.png",
+    "../../../assets/img/fondo3.png"];
+
+  currentImageIndex: number = 0;
+
+  ngOnInit(){
+    setInterval(()=>{
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.imagen.length;
+  },5000);
+  }
 }
