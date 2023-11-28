@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, forkJoin } from 'rxjs';
 import { Item } from '../models/item.model';
+import { map, switchMap } from 'rxjs/operators';
 
 
 @Injectable({
@@ -19,6 +20,10 @@ export class ItemServiceService {
   //Carrito observable
   private myCart = new BehaviorSubject<Item[]>([]);
   myCart$ = this.myCart.asObservable()
+
+  //resultados de la búsqueda
+  searchResults: Item[] = [];
+
 
   constructor( private http: HttpClient ) { }
 
@@ -45,6 +50,31 @@ export class ItemServiceService {
     this.myCart.next(this.myList)
   }
 
+
+//--> FUNCIÓN DEL BUSCADOR
+
+  searchItem(name: string): Observable<Item[]> {
+    // Combinamos los resultados de getItems() y getItems2() usando el método forkJoin() y le metemos el array
+    //con los observables dentro, y a esta mezcla mediante el metodo pipe y dentro del mismo los métodos map,
+    //hacemos dos cosas, unimos los dos observables en uno, y después a ese resultante
+    //le aplicamos el filtro para ver si el nombre (title) que le hemos pasado por parámetro coincide
+    //con alguno del array resultante de la mezcla de los dos que ahora es uno al que le hemos llamado items.
+    return forkJoin([this.getItems(), this.getItems2()]).pipe(
+      // Une los resultados en un solo array
+      map(([items1, items2]) => [...items1, ...items2]),
+      // Aplica la lógica de búsqueda
+      map(items => items.filter(item => item.title.toLowerCase().includes(name.toLowerCase())))
+    );
   }
+
+  getResults(name: string): Observable<Item[]> {
+    return this.searchItem(name)
+    }
+  }
+
+
+
+
+
 
 
