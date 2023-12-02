@@ -18,3 +18,56 @@
   min-height:100vh;
   /* border-bottom: 1px solid white; */
 }
+
+.container h1{
+  margin-top: 30px;
+}
+
+.formulario{
+  /* border:3px solid red; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formulario form{
+  /* border: 3px solid yellow; */
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 30px;
+  /* align-items: center; */
+}
+
+.formulario form input, label{
+  /* border: 3px solid blue; */
+  margin-top: 20px;
+}
+
+.formulario form input{
+  height: 30px;
+  border-radius: 20px;
+  border-style: none;
+}
+
+.formulario textarea{
+  margin-top: 20px;
+}
+
+.boton{
+  height: 30px;
+  width: 70px;
+  align-self: center;
+  margin-top: 20px;
+  font-family: 'Asap';
+  cursor: pointer;
+  border-radius: 20px;
+  border-style: none;
+
+}
+
+.boton:hover{
+  background-color: black;
+  color:white;
+}

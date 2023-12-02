@@ -21,7 +21,7 @@ export class CartComponent {
     }
 
     deleteItem(id:number){
-      this.itemService.deleteItem(id)
+      this.itemService.deleteItem(id);
     }
 
 }

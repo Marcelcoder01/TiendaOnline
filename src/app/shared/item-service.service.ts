@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, forkJoin } from 'rxjs';
 import { Item } from '../models/item.model';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -19,7 +19,7 @@ export class ItemServiceService {
 
   //Carrito observable
   private myCart = new BehaviorSubject<Item[]>([]);
-  myCart$ = this.myCart.asObservable()
+  myCart$ = this.myCart.asObservable() // para desabilitar funciones de edición (como .next) y solo permitir la lectura (suscribe)
 
   //resultados de la búsqueda
   searchResults: Item[] = [];
@@ -43,11 +43,11 @@ export class ItemServiceService {
     }
 
   deleteItem(id: number){
-    let myList2 = this.myList.filter(function(item){
-      return item.id !== id
-    });
-    this.myList = myList2
-    this.myCart.next(this.myList)
+    let myList2 = this.myList.filter((item)=>{
+    return item.id !== id});
+    this.myList = myList2;
+    this.myCart.next(this.myList);
+    console.log(myList2)
   }
 
 

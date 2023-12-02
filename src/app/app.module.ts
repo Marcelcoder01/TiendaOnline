@@ -15,6 +15,7 @@ import { Items2Component } from './pages/items2/items2.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItemSearchComponent } from './pages/item-search/item-search.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ItemSearchComponent } from './pages/item-search/item-search.component';
     Item2CardComponent,
     Items2Component,
     ContactFormComponent,
-    ItemSearchComponent
+    ItemSearchComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

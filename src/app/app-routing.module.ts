@@ -7,6 +7,7 @@ import { ItemsComponent } from './pages/items/items.component';
 import { Items2Component } from './pages/items2/items2.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { ItemSearchComponent } from './pages/item-search/item-search.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'items', component:ItemsComponent },
   { path: 'items2', component:Items2Component },
   { path: 'contact', component:ContactFormComponent },
-  { path: 'item-search', component: ItemSearchComponent}
+  { path: 'item-search', component: ItemSearchComponent },
+  { path: 'about', component: AboutComponent }
+
 
 ];
 
