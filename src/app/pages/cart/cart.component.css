@@ -54,3 +54,16 @@
   cursor: pointer;
   font-size: 20px;
 }
+
+.pay{
+  height: 30px;
+  width: 150px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.pay:active{
+  background-color: black;
+  color: white;
+}
