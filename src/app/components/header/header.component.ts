@@ -13,9 +13,12 @@ export class HeaderComponent {
 
   constructor(private itemService: ItemServiceService, public router: Router){}
 
-  search(){
-this.itemService.getResults(this.searchTerm).subscribe(
-  (data)=> {this.router.navigate(['/item-search']), { queryParams: { results: JSON.stringify(data)  }}});
+  search() {
+    this.itemService.getResults(this.searchTerm).subscribe(
+      (data) => {
+        this.router.navigate(['/item-search'], { queryParams: { results: JSON.stringify(data) }});
+      }
+    );
 
     //basicamente, le enviamos al servicio el termino que escribimos y nos suscribimos al observable,
     //cuando nos lo devuelve es de tipo array de objeto[], entonces lo convertimos a cadena JSON
