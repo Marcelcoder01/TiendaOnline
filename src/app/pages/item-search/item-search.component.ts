@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from 'src/app/models/item.model';
 import { ItemServiceService } from 'src/app/shared/item-service.service';
+import Swal from 'sweetalert2';
+
 
 
 @Component({
@@ -34,7 +36,13 @@ export class ItemSearchComponent {
  });
 }
 
-  addToCart(item:Item){
-    return this.itemService.addItem(item);
-  }
+addToCart(item:Item){
+  Swal.fire({
+    title: "Genial!",
+    text: "Producto añadido al carrito",
+    icon: "success",
+    confirmButtonText: "Ok"
+  });
+  return this.itemService.addItem(item);
+}
 }

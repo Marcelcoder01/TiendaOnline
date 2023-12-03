@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Item } from 'src/app/models/item.model';
 import { ItemServiceService } from 'src/app/shared/item-service.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-item2-card',
@@ -20,6 +22,12 @@ export class Item2CardComponent {
   }
 
   addToCart(item:Item){
+    Swal.fire({
+      title: "Genial!",
+      text: "Producto añadido al carrito",
+      icon: "success",
+      confirmButtonText: "Ok"
+    });
     return this.itemService.addItem(item);
   }
 
